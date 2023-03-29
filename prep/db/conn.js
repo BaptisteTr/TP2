@@ -23,13 +23,13 @@ function enregistrerMessage(nom, email, message) {
 
   return new Promise((resolve, reject ) => {
   
-    var message = {
+    var messageDb = {
       "nom" : nom,
       "email" : email,
       "message" : message
     }
   
-    messagesCollection.insertOne(message)
+    messagesCollection.insertOne(messageDb)
       .then(result => {
         resolve(JSON.stringify(result));
       })
